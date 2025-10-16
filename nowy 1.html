@@ -1,0 +1,214 @@
+<div class="equip-2026">
+    <div class="row">
+	<div class="col-12 col-lg-6">
+		<label>Imię i nazwisko</label>
+		[text* full-name]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Adres zamieszkania</label>
+		[text* address]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Nr PESEL</label>
+		[text* pesel]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Telefon</label>
+		[tel* phone]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Adres e-mail</label>
+		[email* email]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Nr konta bankowego</label>
+		[text* bank-account]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Nr wet. Pasieki</label>
+		[text* vet-number]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Numer RHD/SB</label>
+		[text* rhd-sb-number]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Numer EP</label>
+		[text* ep-number]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Stan rodzin na dzień składania wniosku</label>
+		[number* hive-count]
+	</div>
+	<div class="col-12 col-lg-6">
+		<label>Koło pszczelarzy</label>
+		[text* beekeepers-association]
+	</div>
+	<div class="col-12">
+	  <h3>Ważne</h3><br><p>*Jeżeli wnioskodawca nie wnioskował o udzielenie pomocy w ramach pomocy finansowej dla pszczelarzy do przezimowanych rodzin pszczelich (nabór 2025) lub liczba ta uległa zmianie, do wniosku należy również dołączyć skan aktualnego dokumentu wydanego przez lekarza weterynarii.<br><br>**Pomoc przysługuje w pełnej wysokości i w pierwszej kolejności młodym pszczelarzom — osobom, które w dniu złożenia wniosku nie ukończyły 40 lat oraz prowadzą działalność nadzorowaną w zakresie utrzymywania pszczół, wpisaną do rejestru, o którym mowa w art. 11 ust. 1 ustawy o chorobach zakaźnych zwierząt. Warunkiem jest nieprzerwane prowadzenie tej działalności przez co najmniej 3 lata lub posiadanie wykształcenia średniego branżowego w zawodzie technik pszczelarz albo zasadniczego zawodowego/branżowego w zawodzie pszczelarz. <br><br>Spełnienie powyższych warunków należy potwierdzić, dołączając do wniosku:
+<ul>
+  <li>skan zaświadczenia o prowadzeniu działalności nadzorowanej w zakresie utrzymywania pszczół, wydany przez właściwego miejscowo powiatowego lekarza weterynarii, lub</li>
+  <li>skan świadectwa bądź innego dokumentu potwierdzającego wykształcenie pszczelarskie.</li>
+</ul></p><br></div>
+	<div class="col-12 col-lg-6">[file file-1
+    id:file-upload-1
+    limit:20mb
+    filetypes:application/*|image/*|video/*|audio/*|text/*|font/*|application/octet-stream|application/zip|application/x-7z-compressed|application/x-rar-compressed|application/x-msdownload
+  ]
+  <p id="file-name-1"></p>
+
+  <!-- Pole 2 -->
+  [file file-2
+    id:file-upload-2
+    limit:20mb
+    filetypes:application/*|image/*|video/*|audio/*|text/*|font/*|application/octet-stream|application/zip|application/x-7z-compressed|application/x-rar-compressed|application/x-msdownload
+  ]
+  <p id="file-name-2"></p>
+
+  <!-- Pole 3 -->
+  [file file-3
+    id:file-upload-3
+    limit:20mb
+    filetypes:application/*|image/*|video/*|audio/*|text/*|font/*|application/octet-stream|application/zip|application/x-7z-compressed|application/x-rar-compressed|application/x-msdownload
+  ]
+  <p id="file-name-3"></p>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    ['1','2','3'].forEach(function(n){
+      var input  = document.getElementById('file-upload-' + n);
+      var output = document.getElementById('file-name-' + n);
+      if (!input || !output) return;
+      input.addEventListener('change', function () {
+        if (input.files && input.files.length > 0) {
+          var f = input.files[0];
+          var sizeKB = Math.round(f.size / 1024);
+          output.textContent = 'Wybrano plik: ' + f.name + ' (' + sizeKB + ' KB)';
+        } else {
+          output.textContent = '';
+        }
+      });
+    });
+  });
+  </script>
+</div>
+<div class="col-12">
+	  <h3>Wnoszę o refundację zakupu:</h3>
+            <div class="table">
+<h3>Pozycja nr 1</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 2</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu2 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca2 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy2 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc2 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto2 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto2 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 3</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu3 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca3 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy3 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc3 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto3 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto3 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 4</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu4 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca4 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy4 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc4 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto4 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto4 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 5</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu5 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca5 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy5 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc5 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto5 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto5 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+
+<button type="button" id="showMoreButton" onclick="showMore()" style="display: block; margin: 20px auto;">
+    Pokaż więcej pozycji
+</button>
+
+
+<div id="moreFields" style="display: none;">
+<h3>Pozycja nr 6</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu6 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca6 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy6 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc6 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto6 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto6 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 7</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu7 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca7 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy7 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc7 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto7 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto7 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 8</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu8 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca8 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy8 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc8 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto8 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto8 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 9</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu9 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca9 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy9 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc9 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto9 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto9 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+<h3>Pozycja nr 10</h3>
+                <div class="row">
+		  <div class="l1">[text rodzaj-sprzetu10 placeholder "Rodzaj sprzętu"]</div>
+		  <div class="l2">[text dostawca10 placeholder "Dostawca"]</div>
+		  <div class="l3">[text nr-katalogowy10 placeholder "Nr katalogowy"]</div>
+		  <div class="l4">[number ilosc10 min:1 placeholder "I. sztuk"]</div>
+		  <div class="l5">[number cena-netto10 min:0 step:0.01 placeholder "Cena netto"]</div>
+		  <div class="l6">[number wartosc-netto10 min:0 step:0.01 placeholder "Wartość netto"]</div>
+                </div>
+            </div>
+	</div>
+</div>
+<script>
+    function showMore() {
+        document.getElementById("moreFields").style.display = "block";
+        document.getElementById("showMoreButton").style.display = "none";
+    }
+</script>
+	<div class="col-12">
+		[checkbox* declaration "Oświadczam, że inwestycja w ramach 'Zakupu sprzętu pszczelarskiego' nie będzie wspierana w ramach interwencji l 10.1.1. 'Inwestycje w gospodarstwach rolnych zwiększające konkurencyjność' (dotacje) oraz interwencji l 10.5 'Rozwój małych gospodarstw', w zakresie sprzętu pszczelarskiego, maszyn i urządzeń wykorzystywanych na potrzeby gospodarki pasiecznej wspieranych w ramach niniejszych interwencji."]
+	</div>
+	<div class="col-12">
+		[checkbox* consent "Oświadczam, że zapoznałem się z klauzulą informacyjną w zakresie przetwarzania danych osobowych dotyczących osób fizycznych i wyrażam zgodę na przetwarzanie danych osobowych w celu realizacji projektu."]
+	</div>
+	<div class="col-12 text-center">
+		[submit "Wygeneruj wniosek"]
+	</div>
+    </div>
+</div>
